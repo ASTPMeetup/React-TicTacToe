@@ -15,6 +15,7 @@ class TicTacToe extends React.Component {
     const state = {...this.state};
     state['board'][cell] = this.state.turn;
     state['turn'] = this.state.turn === 'X' ? 'O':'X';
+
     this.setState(state);
     this.handleWin();
   }
@@ -42,19 +43,19 @@ class TicTacToe extends React.Component {
         <br/>
         <section>
           <div className="row">
-            <Cell num="0" playerTurn={this.state.turn} whenClicked={this.handleClick.bind(this)} playerMove={this.state.board[0]}/>
-            <Cell num="1" playerTurn={this.state.turn} whenClicked={this.handleClick.bind(this)} playerMove={this.state.board[1]}/>
-            <Cell num="2" playerTurn={this.state.turn} whenClicked={this.handleClick.bind(this)} playerMove={this.state.board[2]}/>
+            <Cell num="0" playerTurn={this.state.turn} whenClicked={this.handleClick.bind(this)}/>
+            <Cell num="1" playerTurn={this.state.turn} whenClicked={this.handleClick.bind(this)}/>
+            <Cell num="2" playerTurn={this.state.turn} whenClicked={this.handleClick.bind(this)}/>
           </div>
           <div className="row">
-            <Cell num="3" playerTurn={this.state.turn} whenClicked={this.handleClick.bind(this)} playerMove={this.state.board[3]}/>
-            <Cell num="4" playerTurn={this.state.turn} whenClicked={this.handleClick.bind(this)} playerMove={this.state.board[4]}/>
-            <Cell num="5" playerTurn={this.state.turn} whenClicked={this.handleClick.bind(this)} playerMove={this.state.board[5]}/>
+            <Cell num="3" playerTurn={this.state.turn} whenClicked={this.handleClick.bind(this)}/>
+            <Cell num="4" playerTurn={this.state.turn} whenClicked={this.handleClick.bind(this)}/>
+            <Cell num="5" playerTurn={this.state.turn} whenClicked={this.handleClick.bind(this)}/>
           </div>
           <div className="row">
-            <Cell num="6" playerTurn={this.state.turn} whenClicked={this.handleClick.bind(this)} playerMove={this.state.board[6]}/>
-            <Cell num="7" playerTurn={this.state.turn} whenClicked={this.handleClick.bind(this)} playerMove={this.state.board[7]}/>
-            <Cell num="8" playerTurn={this.state.turn} whenClicked={this.handleClick.bind(this)} playerMove={this.state.board[8]}/>
+            <Cell num="6" playerTurn={this.state.turn} whenClicked={this.handleClick.bind(this)}/>
+            <Cell num="7" playerTurn={this.state.turn} whenClicked={this.handleClick.bind(this)}/>
+            <Cell num="8" playerTurn={this.state.turn} whenClicked={this.handleClick.bind(this)}/>
           </div>
         </section>
       </div>
@@ -68,7 +69,7 @@ class Cell extends React.Component {
     super(props);
     this.state = {
       cellNum: this.props.num,
-      mark: this.props.playerMove
+      mark: ''
     }
   }
 
